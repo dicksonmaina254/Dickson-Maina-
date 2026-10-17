@@ -1,1 +1,555 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dick Maina W. | Technology & Agriculture</title>
+
+  <meta name="description" content="Personal portfolio of Dick Maina W., exploring software development, AI, automation, and agricultural technology.">
+
+  <style>
+    /* ===== 1. GENERAL SETTINGS ===== */
+    :root {
+      --background: #080d0b;
+      --surface: #101914;
+      --green: #35e68b;
+      --text: #f1f7f3;
+      --muted: #a2b2a8;
+      --border: #26372d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* ===== 2. NAVIGATION ===== */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(8, 13, 11, 0.95);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    /* ===== 3. HERO SECTION ===== */
+    .hero {
+      padding: 105px 0 95px;
+      background:
+        radial-gradient(
+          ellipse at 80% 30%,
+          rgba(53, 230, 139, 0.10),
+          transparent 48%
+        );
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.1;
+      margin: 22px 0;
+      max-width: 850px;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid var(--green);
+      border-radius: 7px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #06110a;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.88;
+    }
+
+    .btn-secondary {
+      color: var(--green);
+    }
+
+    /* ===== 4. SECTIONS ===== */
+    section {
+      padding: 78px 0;
+      scroll-margin-top: 25px;
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 8px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .about-text {
+      color: var(--muted);
+      max-width: 800px;
+    }
+
+    /* ===== 5. SKILL CARDS ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--green);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      margin: 15px 5px 0 0;
+      border-radius: 20px;
+      font-size: 0.78rem;
+    }
+
+    /* ===== 6. FEATURED PROJECT ===== */
+    .project {
+      border-left: 3px solid var(--green);
+    }
+
+    .project-label {
+      color: var(--green);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .project h3 {
+      font-size: 1.4rem;
+      margin: 12px 0;
+    }
+
+    /* ===== 7. CONTACT ===== */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 35px;
+      border-radius: 14px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 12px 0 24px;
+    }
+
+    .email {
+      display: inline-block;
+      color: var(--green);
+      margin-top: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    /* ===== 8. FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ===== 9. MOBILE RESPONSIVENESS ===== */
+    @media (max-width: 650px) {
+      nav {
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .contact-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">DMW<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#agriculture">EverRise</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow">Technology · Innovation · Agriculture</div>
+
+        <h1>
+          Building with <span>technology.</span><br>
+          Creating real-world impact.
+        </h1>
+
+        <p>
+          I'm Dick Maina W., an aspiring technology entrepreneur
+          exploring software development, artificial intelligence,
+          automation, and technology-driven agricultural solutions.
+          My goal is to turn practical ideas into useful products.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#projects">
+            Explore My Work
+          </a>
+
+          <a class="btn btn-secondary" href="#contact">
+            Get In Touch →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">A little about me</div>
+          <h2>Curious mind. Practical ambition.</h2>
+        </div>
+
+        <p class="about-text">
+          I am developing my skills in programming, AI, data,
+          and digital automation while exploring how technology
+          can solve problems in agriculture and international trade.
+          Through my work on EverRise Agriculture, I am interested
+          in better market access, agricultural information,
+          and practical tools that can support farmers and businesses.
+          I believe in learning by building, testing ideas,
+          and improving through real-world experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Areas of focus</div>
+          <h2>What I'm working towards</h2>
+          <p>
+            These are my development areas. My portfolio will grow
+            as I complete projects and demonstrate each skill.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">⌨️</div>
+            <h3>Software Development</h3>
+            <p>
+              Learning to build useful applications, write clean code,
+              solve problems, and develop websites and digital tools.
+            </p>
+            <span class="tag">Programming</span>
+            <span class="tag">Web Development</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>
+              Exploring AI tools, intelligent workflows, and practical
+              ways to apply machine learning to real problems.
+            </p>
+            <span class="tag">AI</span>
+            <span class="tag">Learning</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Automation & Data</h3>
+            <p>
+              Exploring scripts and data-driven workflows that reduce
+              repetitive tasks and make information easier to manage.
+            </p>
+            <span class="tag">Automation</span>
+            <span class="tag">Data</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌱</div>
+            <h3>Agricultural Technology</h3>
+            <p>
+              Exploring how digital records, market information,
+              and technology can help connect farmers and markets.
+            </p>
+            <span class="tag">AgriTech</span>
+            <span class="tag">Innovation</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">My portfolio</div>
+          <h2>Projects and experiments</h2>
+          <p>
+            I am building practical projects to turn what I learn
+            into demonstrable skills.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card project">
+            <div class="project-label">Planned project · 01</div>
+            <h3>Coffee Export Tracker</h3>
+            <p>
+              A proposed tool for organising coffee buyer leads,
+              supplier information, follow-up dates, and estimated
+              export costs for an agricultural business.
+            </p>
+            <span class="tag">Python</span>
+            <span class="tag">Data Management</span>
+          </article>
+
+          <article class="card project">
+            <div class="project-label">Planned project · 02</div>
+            <h3>Business Workflow Automation</h3>
+            <p>
+              A proposed automation project to organise routine
+              tasks, track outstanding actions, and generate
+              simple business reports.
+            </p>
+            <span class="tag">Automation</span>
+            <span class="tag">Productivity</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVER RISE -->
+    <section id="agriculture">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Entrepreneurship</div>
+          <h2>EverRise Agriculture</h2>
+        </div>
+
+        <p class="about-text">
+          EverRise Agriculture is my agricultural business initiative,
+          focused on exploring farmer support, agricultural
+          market access, coffee trade, and technology-enabled
+          solutions. I am interested in building practical connections
+          between farmers, suppliers, and international markets.
+        </p>
+
+        <div style="margin-top: 25px;">
+          <a
+            class="btn btn-secondary"
+            href="https://everrise-agriculture.base44.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore EverRise Agriculture →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="eyebrow">Let's connect</div>
+          <h2>Have an idea or opportunity?</h2>
+
+          <p>
+            I'm interested in connecting with people working in
+            technology, AI, agriculture, international trade,
+            and meaningful innovation.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="mailto:everrise.agriculture@gmail.com?subject=Portfolio%20Enquiry"
+          >
+            Contact Me
+          </a>
+
+          <br>
+
+          <a
+            class="email"
+            href="mailto:everrise.agriculture@gmail.com"
+          >
+            everrise.agriculture@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <span>© 2026 Dick Maina W.</span>
+      <span>Learning. Building. Improving.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
+
